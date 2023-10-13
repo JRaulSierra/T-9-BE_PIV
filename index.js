@@ -1,9 +1,13 @@
 const express = require('express')
 const database = require('./db/sqlConnection');
+const cors = require('cors');
 const app = express()
 const PORT = 3001
 app.use(express.json());
 
+app.use(cors({
+    origin: '*'
+}));
 let people = [
     {
       name: "Hannah Rickard",
